@@ -242,6 +242,7 @@ build/docker/gotools/bin/protoc-gen-go: build/docker/gotools
 
 build/docker/gotools: gotools/Makefile
 	@mkdir -p $@/bin $@/obj
+	@git clone https://github.com/golang/tools.git $(abspath $@)/obj/gopath/src/golang.org/x/tools
 	@$(DRUN) \
 		-v $(abspath $@):/opt/gotools \
 		-w /opt/gopath/src/$(PKGNAME)/gotools \
